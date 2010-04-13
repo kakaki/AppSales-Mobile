@@ -1,0 +1,161 @@
+﻿/*
+ Localizable.strings
+ AppSalesMobile
+ 
+ * Copyright (c) 2008, omz:software
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the <organization> nor the
+ *       names of its contributors may be used to endorse or promote products
+ *       derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY omz:software ''AS IS'' AND ANY
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL <copyright holder> BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+ 
+"View Reports" = "Podgląd Raportów";
+"Daily" = "Dzienne";
+"Weekly" = "Tygodniowe";
+"Configuration" = "Konfiguracja";
+"Settings" = "Ustawienia";
+"About" = "Informacja";
+"About AppSales" = "O AppSales";
+"Flag icons by icondrawer.com" = "Ikony pochodzą z icondrawer.com";
+"Countries" = "Kraje";
+"Products" = "Produkty";
+"MON" = "PON";
+"TUE" = "WTO";
+"WED" = "ŚRO";
+"THU" = "CZW";
+"FRI" = "PIĄ";
+"SAT" = "SOB";
+"SUN" = "NIE";
+"%@ : %i free downloads" = "%@ : %i darmowych pobrań";
+"iTunes Connect Login" = "iTunes Connect Login";
+"User Name" = "Uzytkownik";
+"Password" = "Haslo";
+"Currency" = "Waluta";
+"US $" = "US $";
+"Euro" = "Euro";
+"Refresh Now" = "Odśwież Kursy";
+"Exchange rates are automatically refreshed every 6 hours.\n\nAll information is presented without any warranties.\n\nThe presented market trend reports should not be considered to be your monthly royalty reports." = "Exchange rates are automatically refreshed every 6 hours.\n\nAll information is presented without any warranties.\n\nThe presented market trend reports should not be considered to be your monthly royalty reports.";
+"Download Failed" = "Nieudane pobranie danych";
+"Sorry, an error occured when trying to download the report files. Please check your username, password and internet connection." = "Sorry, an error occured when trying to download the report files. Please check your username, password and internet connection.";
+"Error" = "Bład";
+"The currency exchange rates could not be refreshed. Please check your internet connection." = "The currency exchange rates could not be refreshed. Please check your internet connection.";
+"OK" = "OK";
+"Username / Password Missing" = "Uzytkownik / Haslo Nieuzupelnione";
+"Please enter a username and a password in the settings." = "Please enter a username and a password in the settings.";
+"No sales" = "brak sprzedazy";
+"Select... ( %@ )" = "Wybierz… ( %@ )";
+"Currencies" = "Waluty";
+"Last refresh: %@" = "Aktualizacja : %@";
+"No Internet Connection" = "No Internet Connection";
+"You need to be connected to the internet to download reports." = "You need to be connected to the internet to download reports.";
+"Revenue (in %@)" = "Kwota (w %@)";
+
+"%i days, ∑ = %@" = "%i dni, ∑ = %@";
+"%@ – %@, %i days, ∑ = %i %@" = "%@ – %@, %i dni, ∑ = %i %@";
+
+"Sales %i days, ∑ = %@, units = %i" = "Sprzedaż %i dni, ∑ = %@, ilość = %i";
+"Revenue %i days, ∑ = %@, units = %i" = "Kwoty %i dni, ∑ = %@, ilość = %i";
+"%@ – %@, %i days, ∑ = %i %@" = "%@ – %@, %i dni, ∑ = %i %@";
+"Regions (%i days, ∑ = %@)" = "Regiony (%i dni, ∑ = %@)";
+"Date Range" = "Zakres Dat";
+"Quick Selection" = "Wybierz";
+"Graphs" = "Wykresy";
+"Charts" = "Wykresy";
+"All Apps" = "Aplikacje";
+"Last 7 Days" = "Ostatnie 7 dni";
+"Last 30 Days" = "Ostatnie 30 dni";
+
+"Mode..." = "Tryb...";
+"Sales" = "Sprzedaż";
+"Revenue" = "Kwoty";
+"%i days, ∑ = %i sales" = "%i dni, ∑ = %i ilości";
+"Regions (%i days, ∑ = %i sales)" = "Regiony (%i dni, ∑ = %i ilości)";
+"Reviews" = "Recenzje";
+"Weekly Report %i of %i" = "Togodniowy raport %i z %i";
+"Daily Report %i of %i" = "Dzienny raport %i z %i";
+"Starting Download..." = "Rozpoczynam pobieranie...";
+"Logging in..." = "Logowanie...";
+"Downloading Daily Reports..." = "Pobieram dzienne raporty...";
+"All Countries" = "Wszystkie kraje";
+"Top Countries" = "Najlepsze kraje";
+"Download Reviews" = "Pobierz recenzje";
+"%i Reviews (%i new)" = "%i recenzji (%i nowych)";
+"Before you can download reviews, you have to download at least one daily report with this version. If you already have today's report, you can delete it and download it again." = 
+"Before you can download reviews, you have to download at least one daily report with this version. If you already have today's report, you can delete it and download it again.";
+"Note" = "Podpowiedź";
+"No new reports found" = "Brak nowych raportów";
+
+"(Please wait)" = "(Proszę czekać)";
+"Importing..." = "Importuję...";
+"You uploaded a file that does not have a .zip extension." = "Wgrany plik nie ma rozszeżenia w .zip";
+"No valid report files were found in the zip archive you uploaded." = "W wczytanym pliku zip nie znaleziono raportów";
+"Successfully imported %i daily and %i weekly reports." = "Zaimportowano %i dzienni i %i tygodniowych raportów.";
+"Import / Export" = "Import / Eksport";
+"(No Wifi connection)" = "(Brak Wifi)";
+"No Wifi connection." = "Brak połaczenia Wifi.";
+"The server could not be started: %@" = "Nieudało się uruchomić serwera: %@";
+
+"USD" = "US Dollar";
+"AUD" = "Australian Dollar";
+"BHD" = "Bahraini Dinar";
+"THB" = "Thai Baht";
+"BND" = "Brunei Dollar";
+"CLP" = "Chilean Peso";
+"DKK" = "Danish Krone";
+"HUF" = "Hungarian Forint";
+"HKD" = "Hong Kong Dollar";
+"ISK" = "Iceland Krona";
+"CAD" = "Canadian Dollar";
+"QAR" = "Qatari Rial";
+"KWD" = "Kuwaiti Dollar";
+"MYR" = "Malaysian Ringgit";
+"MTL" = "Maltese Lira";
+"MUR" = "Mauritius Rupee";
+"MXN" = "Mexican Nuevo Peso";
+"NPR" = "Nepalese Rupee";
+"TWD" = "Taiwan Dollar";
+"NZD" = "New Zealand Dollar";
+"NOK" = "Norwegian Krone";
+"PKR" = "Pakistan Rupee";
+"GBP" = "Pound Sterling";
+"ZAR" = "South African Rand";
+"BRL" = "Brazilian Real";
+"CNY" = "Yuan Renminbi";
+"OMR" = "Omani Rial";
+"IDR" = "Indonesian Rupiah";
+"RUB" = "Russian Rubles";
+"SAR" = "Saudi Riyal";
+"ILS" = "Israeli New Shekel";
+"SEK" = "Swedish Krona";
+"CHF" = "Swiss Franc";
+"SGD" = "Singapore Dollar";
+"SKK" = "Slovak Koruna";
+"LKR" = "Sri Lanka Rupee";
+"KRW" = "Korean Won";
+"KZT" = "Kazakhstan Tenge";
+"CZK" = "Czech Koruna";
+"AED" = "Arab Emirates Dirham";
+"JPY" = "Japanese Yen";
+"CYP" = "Cyprus Pound";
+"INR" = "Indian Rupee";
+"EUR" = "Euro";
+"PLN" = "Polish Zloty";

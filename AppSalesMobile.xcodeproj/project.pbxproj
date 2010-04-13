@@ -706,6 +706,10 @@
 		7FEA5B42105B6D38000A12E6 /* SingleReviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleReviewController.m; sourceTree = "<group>"; };
 		7FEA5C2B105C1A57000A12E6 /* 5stars_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5stars_gray.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9253FCE41173A6CA0085CAF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/ImportHelp.html; sourceTree = "<group>"; };
+		9253FCE51173A6CA0085CAF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/ImportTemplate.html; sourceTree = "<group>"; };
+		9253FCE61173A6CA0085CAF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9253FCE71173A6CA0085CAF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1342,6 +1346,7 @@
 				French,
 				German,
 				en,
+				pl,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -1688,6 +1693,7 @@
 			children = (
 				7FB0C59C0EBA39C7005E2C45 /* English */,
 				7F1345720EC6D7990050D5F2 /* German */,
+				9253FCE71173A6CA0085CAF3 /* pl */,
 			);
 			name = SettingsViewController.xib;
 			sourceTree = "<group>";
@@ -1697,6 +1703,7 @@
 			children = (
 				7FA7ECBF0EE437BF00C1954E /* English */,
 				7FA7ECC30EE437CC00C1954E /* German */,
+				9253FCE61173A6CA0085CAF3 /* pl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1706,6 +1713,7 @@
 			children = (
 				7FE312DE115273DE004DEA7C /* English */,
 				7FE0B96B1157B27500A8B137 /* German */,
+				9253FCE41173A6CA0085CAF3 /* pl */,
 			);
 			name = ImportHelp.html;
 			sourceTree = "<group>";
@@ -1715,6 +1723,7 @@
 			children = (
 				7FE311C511524E8E004DEA7C /* English */,
 				7FE0B9741157B42200A8B137 /* German */,
+				9253FCE51173A6CA0085CAF3 /* pl */,
 			);
 			name = ImportTemplate.html;
 			sourceTree = "<group>";
@@ -1726,7 +1735,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1746,7 +1755,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AppSalesMobile_Prefix.pch;
@@ -1776,7 +1785,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ole Zorn";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

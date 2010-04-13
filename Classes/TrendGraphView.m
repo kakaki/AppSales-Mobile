@@ -30,7 +30,7 @@
 	BOOL showUnits = [[NSUserDefaults standardUserDefaults] boolForKey:@"ShowUnitsInGraphs"];
 		
 	//draw background:
-	float maxX = 305.0;
+	float maxX = 300.0;
 	float minX = 40.0;
 	float minY = 30.0;
 	float maxY = 170;
@@ -41,8 +41,16 @@
 	NSMutableArray *revenues = [NSMutableArray array];
 	float maxRevenue = 0.0;
 	float totalRevenue = 0.0;
+	int sumUnits = 0;
+	float sumRevenue = 0.0;
+	
 	for (Day *d in self.days) {
-		float revenue = (showUnits) ? (float)[d totalUnitsForApp:self.app] : [d totalRevenueInBaseCurrencyForApp:self.app];
+		float revenue = [d totalRevenueInBaseCurrencyForApp:self.app];
+		int Units = [d totalUnitsForApp:self.app];
+		sumRevenue += revenue;
+		sumUnits += Units;		
+		if (showUnits)
+			revenue = (float)Units;
 		[revenues addObject:[NSNumber numberWithFloat:revenue]];
 		totalRevenue += revenue;
 		if (revenue > maxRevenue) maxRevenue = revenue;
@@ -50,6 +58,10 @@
 	if (maxRevenue == 0.0) {
 		return;
 	}
+	
+	int intmaxRevenue = (int)maxRevenue +1;
+	
+	if (intmaxRevenue<10) minX = 30; 
 	
 	UIColor *graphColor = (self.app) ? [UIColor colorWithRed:0.12 green:0.35 blue:0.71 alpha:1.0] : [UIColor colorWithRed:0.84 green:0.11 blue:0.06 alpha:1.0];
 	
@@ -65,31 +77,43 @@
 	CGContextDrawPath(c, kCGPathStroke);
 	CGContextSetAllowsAntialiasing(c, YES);
 	[@"0" drawInRect:CGRectMake(0, maxY - 4, minX - 4, 10) withFont:[UIFont boldSystemFontOfSize:10.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentRight];
-	NSString *maxString = [NSString stringWithFormat:@"%i", (int)maxRevenue];
+	NSString *maxString = [NSString stringWithFormat:@"%i", intmaxRevenue];
 	[maxString drawInRect:CGRectMake(0, minY - 8, minX - 4, 10) withFont:[UIFont boldSystemFontOfSize:10.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentRight];
 	float averageRevenue = totalRevenue / [revenues count];
-	float averageY = maxY - ((averageRevenue / maxRevenue) * (maxY - minY));
+	float averageY = maxY - ((averageRevenue / intmaxRevenue) * (maxY - minY));
 	if ((averageY < (maxY + 10)) && (averageY > (minY + 10))) {
-		NSString *averageString = [NSString stringWithFormat:@"%i", (int)averageRevenue];
+		NSString *averageString;
+		if (averageRevenue<99) 
+			averageString = [NSString stringWithFormat:@"%1.2f", averageRevenue];
+		else
+			averageString = [NSString stringWithFormat:@"%i", (int)averageRevenue];
 		[graphColor set];
 		[averageString drawInRect:CGRectMake(0, averageY - 6, minX - 4, 10) withFont:[UIFont boldSystemFontOfSize:10.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentRight];
 	}
 	[[UIColor darkGrayColor] set];
 	
-	NSString *caption;
-	if (showUnits)
-		caption = NSLocalizedString(@"Sales",nil);
-	else
-		caption = [NSString stringWithFormat:NSLocalizedString(@"Revenue (in %@)",nil), [[CurrencyManager sharedManager] baseCurrencyDescription]];
+//	NSString *caption;
+//	if (showUnits)
+//		caption = NSLocalizedString(@"Sales",nil);
+//	else
+//		caption = [NSString stringWithFormat:NSLocalizedString(@"Revenue (in %@)",nil), [[CurrencyManager sharedManager] baseCurrencyDescription]];
 	
-	[caption drawInRect:CGRectMake(10, 10, 300, 20) withFont:[UIFont boldSystemFontOfSize:12.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentCenter];
+//	[caption drawInRect:CGRectMake(10, 10, 300, 20) withFont:[UIFont boldSystemFontOfSize:12.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentCenter];
+	
 	NSString *subtitle;
 	if (showUnits)
-		subtitle = [NSString stringWithFormat:NSLocalizedString(@"%i days, ∑ = %i sales",nil), [revenues count], (int)totalRevenue];
+		subtitle = [NSString stringWithFormat:NSLocalizedString(@"Sales %i days, ∑ = %@, units = %i",nil), [revenues count], [[CurrencyManager sharedManager] baseCurrencyDescriptionForAmount:[NSNumber numberWithFloat:sumRevenue] withFraction:YES], sumUnits];
 	else
-		subtitle = [NSString stringWithFormat:NSLocalizedString(@"%i days, ∑ = %@",nil), [revenues count], [[CurrencyManager sharedManager] baseCurrencyDescriptionForAmount:[NSNumber numberWithFloat:totalRevenue] withFraction:YES]];
-	
-	[subtitle drawInRect:CGRectMake(10, maxY + 5, 300, 20) withFont:[UIFont boldSystemFontOfSize:12.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentCenter];
+		subtitle = [NSString stringWithFormat:NSLocalizedString(@"Revenue %i days, ∑ = %@, units = %i",nil), [revenues count], [[CurrencyManager sharedManager] baseCurrencyDescriptionForAmount:[NSNumber numberWithFloat:sumRevenue] withFraction:YES], sumUnits];
+	[subtitle drawInRect:CGRectMake(10, 10, 300, 20) withFont:[UIFont boldSystemFontOfSize:12.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentCenter];
+
+//	NSString *subtitle;
+//	if (showUnits)
+//		subtitle = [NSString stringWithFormat:NSLocalizedString(@"%i days, ∑ = %i sales",nil), [revenues count], (int)totalRevenue];
+//	else
+//		subtitle = [NSString stringWithFormat:NSLocalizedString(@"%i days, ∑ = %@",nil), [revenues count], [[CurrencyManager sharedManager] baseCurrencyDescriptionForAmount:[NSNumber numberWithFloat:totalRevenue] withFraction:YES]];
+//	
+//	[subtitle drawInRect:CGRectMake(10, maxY + 5, 300, 20) withFont:[UIFont boldSystemFontOfSize:12.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentCenter];
 	
 	NSString *appName = (self.app != nil) ? (self.app) : NSLocalizedString(@"All Apps",nil);
 	float actualFontSize = 10.0;
@@ -102,7 +126,7 @@
 	[appName drawInRect:appNameRect withFont:[UIFont boldSystemFontOfSize:actualFontSize] lineBreakMode:UILineBreakModeClip alignment:UITextAlignmentLeft];
 		
 	//draw weekend background:
-	if ([days count] <= 31) {
+	if ([days count] <= 50) {
 		CGContextSetAllowsAntialiasing(c, NO);
 		float weekendWidth = (maxX - minX) / ([days count] - 1);
 		NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
@@ -113,13 +137,51 @@
 			shade = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.1];
 		[shade set];
 		int i = 0;
+		NSString *dayStr;
+
 		for (Day *d in self.days) {
 			//NSLog(@"%@", d.date);
 			NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit fromDate:d.date];
+			NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:d.date];
+			
+			float x = minX + ((maxX - minX) / ([days count] - 1)) * i;
+			float x2 = x + weekendWidth;
+			if (x2 > maxX) x2 = maxX;
+			
+			if (([days count] > 25)  & ([comps weekday] == 7)) {
+				CGRect DayRect;
+				if ([components day] < 10)
+				{DayRect = CGRectMake(x-2, maxY+5, 15, 10);}
+				else
+				{DayRect = CGRectMake(x-5, maxY+5, 15, 10);}
+				dayStr = [NSString stringWithFormat:@"%i", [components day]];
+				[[UIColor darkGrayColor] set];
+				[dayStr drawInRect:DayRect withFont:[UIFont boldSystemFontOfSize:10.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentLeft];				
+			}
+			
+			if ([days count] <=25){
+				CGRect DayRect;
+				if ([components day] < 10)
+				{DayRect = CGRectMake(x-2, maxY+5, 15, 10);}
+				else
+				{DayRect = CGRectMake(x-5, maxY+5, 15, 10);}
+				dayStr = [NSString stringWithFormat:@"%i", [components day]];
+				[[UIColor darkGrayColor] set];
+				[dayStr drawInRect:DayRect withFont:[UIFont boldSystemFontOfSize:10.0] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentLeft];
+			}
+			
+			if ([days count] <=40){		
+				[[UIColor darkGrayColor] set];
+				float lengths[] = {2.0, 2.0};
+				CGContextSetLineDash(c, 0.0, lengths, 2);
+				CGContextMoveToPoint(c, x, minY);
+				CGContextAddLineToPoint(c, x, maxY);
+				CGContextDrawPath(c, kCGPathStroke);
+				CGContextSetLineDash(c, 0.0, NULL, 0);
+			}
+			
 			if ([comps weekday] == 7) {
-				float x = minX + ((maxX - minX) / ([days count] - 1)) * i;
-				float x2 = x + weekendWidth;
-				if (x2 > maxX) x2 = maxX;
+				[shade set];
 				CGRect weekendRect = CGRectMake(x, minY - 2, (x2 - x), (maxY - minY) + 3);
 				CGContextFillRect(c, weekendRect);
 			}
@@ -138,7 +200,7 @@
 	CGContextSetLineJoin(c, kCGLineJoinRound);
 	for (NSNumber *revenue in revenues) {
 		float r = [revenue floatValue];
-		float y = maxY - ((r / maxRevenue) * (maxY - minY));
+		float y = maxY - ((r / intmaxRevenue) * (maxY - minY));
 		float x = minX + ((maxX - minX) / ([revenues count] - 1)) * i;
 		if (prevX == 0.0) {
 			CGContextMoveToPoint(c, x, y);

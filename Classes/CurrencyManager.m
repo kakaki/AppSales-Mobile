@@ -57,7 +57,7 @@
 								  @"USD", @"AUD", @"BHD", @"THB", @"BND", 
 								  @"CLP", @"DKK", @"EUR", @"HUF", @"HKD", @"ISK", @"CAD", 
 								  @"QAR", @"KWD", @"MYR", @"MTL", @"MUR", @"MXN", 
-								  @"NPR", @"TWD", @"NZD", @"NOK", @"PKR", @"GBP", 
+								  @"NPR", @"TWD", @"NZD", @"NOK", @"PLN", @"PKR", @"GBP", 
 								  @"ZAR", @"BRL", @"CNY", @"OMR", @"IDR", @"RUB", 
 								  @"SAR", @"ILS", @"SEK", @"CHF", @"SGD", @"SKK", 
 								  @"LKR", @"KRW", @"KZT", @"CZK", @"AED", @"JPY", 
@@ -108,6 +108,7 @@
 		[exchangeRates setObject:[NSNumber numberWithFloat:0.0101] forKey:@"\"NPR to EUR\""];
 		[exchangeRates setObject:[NSNumber numberWithFloat:0.4338] forKey:@"\"NZD to EUR\""];
 		[exchangeRates setObject:[NSNumber numberWithFloat:2.0786] forKey:@"\"OMR to EUR\""];
+		[exchangeRates setObject:[NSNumber numberWithFloat:0.2509] forKey:@"\"PLN to EUR\""];
 		[exchangeRates setObject:[NSNumber numberWithFloat:0.0101] forKey:@"\"PKR to EUR\""];
 		[exchangeRates setObject:[NSNumber numberWithFloat:0.2198] forKey:@"\"QAR to EUR\""];
 		[exchangeRates setObject:[NSNumber numberWithFloat:0.029] forKey:@"\"RUB to EUR\""];
