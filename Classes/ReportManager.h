@@ -59,4 +59,7 @@
 - (BOOL)isDownloadingReviews;
 - (NSString *)reviewDownloadStatus;
 
+- (int)totalUnits;
+- (NSString *)totalRevenueString;
+
 @end

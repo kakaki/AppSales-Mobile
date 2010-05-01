@@ -317,6 +317,18 @@
     return cell;
 }
 
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+	if (section == 0) {
+    ReportManager *reportManager = [ReportManager sharedManager];
+		return [NSString stringWithFormat:NSLocalizedString(@"Total: %d sales (%@)",nil), [reportManager totalUnits], [reportManager totalRevenueString]];
+		}
+	else {
+		return nil;
+		}
+}
+
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
 	int row = [indexPath row];
