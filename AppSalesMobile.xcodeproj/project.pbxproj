@@ -324,6 +324,7 @@
 		7FEA5B40105B6CD2000A12E6 /* ReviewTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 7FEA5B3F105B6CD2000A12E6 /* ReviewTemplate.html */; };
 		7FEA5B43105B6D38000A12E6 /* SingleReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA5B42105B6D38000A12E6 /* SingleReviewController.m */; };
 		7FEA5C2C105C1A57000A12E6 /* 5stars_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEA5C2B105C1A57000A12E6 /* 5stars_gray.png */; };
+		922BA71C118CAA2F00D4F267 /* UITableView-SectionTitleBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 922BA71B118CAA2F00D4F267 /* UITableView-SectionTitleBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -706,6 +707,7 @@
 		7FEA5B42105B6D38000A12E6 /* SingleReviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleReviewController.m; sourceTree = "<group>"; };
 		7FEA5C2B105C1A57000A12E6 /* 5stars_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5stars_gray.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		922BA71B118CAA2F00D4F267 /* UITableView-SectionTitleBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITableView-SectionTitleBackground.png"; sourceTree = "<group>"; };
 		9253FCE41173A6CA0085CAF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/ImportHelp.html; sourceTree = "<group>"; };
 		9253FCE51173A6CA0085CAF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/ImportTemplate.html; sourceTree = "<group>"; };
 		9253FCE61173A6CA0085CAF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 		7F4C217510230EF200F17F7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				922BA71B118CAA2F00D4F267 /* UITableView-SectionTitleBackground.png */,
 				7FE3139111528920004DEA7C /* HUDFrame.png */,
 				7FE3131A11527CC0004DEA7C /* Default.png */,
 				7FE3134C115282EE004DEA7C /* Blue.png */,
@@ -1617,6 +1620,7 @@
 				7FE315651152E117004DEA7C /* ImportExport_Highlighted.png in Resources */,
 				7FE315661152E117004DEA7C /* Week_Highlighted.png in Resources */,
 				7FE315671152E117004DEA7C /* Graphs_Highlighted.png in Resources */,
+				922BA71C118CAA2F00D4F267 /* UITableView-SectionTitleBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1735,7 +1739,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1743,10 +1747,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AppSalesMobile_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = AppSalesMobile;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
