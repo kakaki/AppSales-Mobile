@@ -7,21 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Review.h"
 
 @interface App : NSObject <NSCoding> {
 
 	NSString *appID;
 	NSString *appName;
 	NSMutableDictionary *reviewsByUser;
-	int newReviewsCount;
+	NSUInteger newReviewsCount;
+	float averageStars;
 }
 
-@property (nonatomic, retain) NSString *appID;
-@property (nonatomic, retain) NSString *appName;
+@property (readonly) NSString *appID;
+@property (readonly) NSString *appName;
 @property (nonatomic, retain) NSMutableDictionary *reviewsByUser;
-@property (assign) int newReviewsCount;
+@property (assign) NSUInteger newReviewsCount;
+@property (readonly) float averageStars;
 
 - (float)averageStars;
+- (id) initWithID:(NSString*)identifier name:(NSString*)name;
+- (void) addOrReplaceReview:(Review*)review;
 
 @end

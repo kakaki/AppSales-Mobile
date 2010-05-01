@@ -11,7 +11,7 @@
 
 @implementation App
 
-@synthesize appID, appName, reviewsByUser, newReviewsCount;
+@synthesize appID, appName, reviewsByUser, averageStars, newReviewsCount;
 
 - (void) updateAverageStars {
 	if (reviewsByUser.count == 0) {

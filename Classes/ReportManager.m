@@ -543,10 +543,7 @@
 				NSString *appID = e.productIdentifier;
 				NSString *appName = e.productName;
 				if (appID && ![self.appsByID objectForKey:appID]) {
-					App *app = [[App new] autorelease];
-					app.appID = appID;
-					app.appName = appName;
-					app.reviewsByUser = [NSMutableDictionary dictionary];
+					App *app = [[[App alloc] initWithID:appID name:appName] autorelease];
 					[appsByID setObject:app forKey:appID];
 				}
 			}
